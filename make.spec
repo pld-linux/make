@@ -70,7 +70,7 @@ aclocal
 autoconf
 automake -a -c -i
 %configure
-%{__make} 
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
