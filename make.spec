@@ -34,16 +34,16 @@ MAKE noch lange nicht erschöpft
 - lesen Sie die Info-Dokumente.
 
 %description -l fr
-make sert à coordonner la compilation et l'édition de liens d'un
+%{__make} sert à coordonner la compilation et l'édition de liens d'un
 ensemble de sources pour produire un programme, ne recompilant que ce
 qui est nécessaire et économisant ainsi beaucoup de temps. En fait,
-make peut faire beaucoup plus -- voir les docs info.
+%{__make} peut faire beaucoup plus -- voir les docs info.
 
 %description -l pl
 Make jest u¿ywany do automatyzacji procesów kompilowania kodu
 ¼ród³owego i konsolidacji kodu programów wykonuj±c tylko te czynno¶ci
 które s± potrzebne w razie modyfikacji plików przetwarzanych przez
-make oszczêdzaj±c tym samym czas. Make mo¿e wykonywaæ o wiele wiêcej
+%{__make} oszczêdzaj±c tym samym czas. Make mo¿e wykonywaæ o wiele wiêcej
 ró¿nych typów operacji zwi±zanych z przedtwarzaniem wsadowym. Pe³en
 opis make znale¼æ mo¿na na stronach info ("info make").
 
@@ -59,13 +59,13 @@ derleyerek zaman yitirilmesini önler.
 %build
 LDFLAGS="-s"; export LDFLAGS
 %configure
-make 
+%{__make} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/make.info*,%{_mandir}/man1/*} \
 	NEWS README
