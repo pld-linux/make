@@ -67,7 +67,7 @@ derleyerek zaman yitirilmesini önler.
 %build
 rm missing
 aclocal
-autoconf
+%{__autoconf}
 automake -a -c -i
 %configure
 %{__make}
