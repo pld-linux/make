@@ -9,7 +9,7 @@ Summary(tr):	GNU Make
 Summary(uk):	GNU Make
 Name:		make
 Version:	3.80
-Release:	4
+Release:	5
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -20,6 +20,7 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/make/
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -90,6 +91,7 @@ derleyerek zaman yitirilmesini önler.
 %patch1 -p1
 
 %build
+cp -f /usr/share/automake/config.sub config
 %configure
 %{__make}
 
