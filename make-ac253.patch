@@ -1,0 +1,22 @@
+--- make-3.79.1/configure.in.orig	Wed Jun 12 16:17:07 2002
++++ make-3.79.1/configure.in	Wed Jun 12 16:17:40 2002
+@@ -58,8 +58,6 @@
+ fi
+ jm_AC_TYPE_UINTMAX_T
+ 
+-AC_SUBST(LIBOBJS)
+-
+ AC_DEFUN(AC_CHECK_SYMBOL, [dnl
+ AC_MSG_CHECKING(for $1)
+ AC_CACHE_VAL(ac_cv_check_symbol_$1, [dnl
+--- make-3.79.1/acinclude.m4.orig	Wed Jun 12 16:17:07 2002
++++ make-3.79.1/acinclude.m4	Wed Jun 12 16:20:33 2002
+@@ -350,7 +350,7 @@
+     AC_MSG_RESULT($with_included_gettext)
+ 
+     if test "$with_included_gettext" = yes; then
+-      LIBOBJS="$LIBOBJS gettext.o"
++      AC_LIBOBJ([gettext])
+     fi
+ 
+     AC_DEFINE(HAVE_GETTEXT, 1, [Define if you have the gettext function.])
