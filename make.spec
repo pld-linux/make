@@ -58,7 +58,7 @@ make "CFLAGS=$RPM_OPT_FLAGS"
 
 %install
 rm -f $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/man/man1
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 make prefix=$RPM_BUILD_ROOT/usr install
 
@@ -67,11 +67,11 @@ strip $RPM_BUILD_ROOT/usr/bin/make
 gzip -9nf $RPM_BUILD_ROOT/usr/{info/make.info*,man/man1/*}
 
 %post
-/sbin/install-info /usr/info/make.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/make.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/info/make.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/make.info.gz /etc/info-dir
 fi
 
 %clean
@@ -82,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc NEWS README
 %attr(755,root,root) /usr/bin/*
 
-/usr/man/man1/*
-/usr/info/make.info*
+%{_mandir}/man1/*
+%{_infodir}/make.info*
 
 %changelog
 * Sat Apr 24 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
