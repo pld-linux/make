@@ -63,9 +63,10 @@ derleyerek zaman yitirilmesini önler.
 %patch1 -p1
 
 %build
+rm missing
 aclocal
 autoconf
-automake -a -c
+automake -a -c -i
 %configure
 %{__make} 
 
