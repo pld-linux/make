@@ -8,21 +8,14 @@ Summary(ru):	GNU Make
 Summary(tr):	GNU Make
 Summary(uk):	GNU Make
 Name:		make
-Version:	3.79.1
-Release:	15
+Version:	3.80
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/make/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.gz
 Source1:	%{name}-non-english-man-pages.tar.bz2
-Patch0:		%{name}-info.patch
-Patch1:		%{name}-noclock_gettime.patch
-Patch2:		%{name}-pl.po.patch
-Patch3:		%{name}-ac250.patch
-Patch4:		%{name}-expand-tilde.patch
-Patch5:		%{name}-ac253.patch
-BuildRequires:	autoconf
-BuildRequires:	automake
+URL:		http://www.gnu.org/software/make/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -89,18 +82,8 @@ derleyerek zaman yitirilmesini önler.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
 
 %build
-rm missing
-aclocal
-%{__autoconf}
-automake -a -c -i
 %configure
 %{__make}
 
