@@ -5,14 +5,14 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.79.1
-Release:	12
+Release:	13
 Epoch:		1
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/make/%{name}-%{version}.tar.gz
-Source1:	%{name}.1.pl
+Source1:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-noclock_gettime.patch
 Patch2:		%{name}-pl.po.patch
@@ -76,10 +76,10 @@ automake -a -c -i
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/{,pl}/man1
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/make.1
+bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 gzip -9nf NEWS README
 
@@ -100,5 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 
 %{_mandir}/man1/*
+%lang(da) %{_mandir}/da/man1/*
+%lang(es) %{_mandir}/es/man1/*
+%lang(ja) %{_mandir}/ja/man1/*
+%lang(nl) %{_mandir}/nl/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
 %{_infodir}/make.info*
