@@ -57,7 +57,7 @@ Make jest u¿ywany do automatyzacji procesów kompilowania kodu
 które s± potrzebne w razie modyfikacji plików przetwarzanych przez
 make oszczêdzaj±c tym samym czas. Make mo¿e wykonywaæ o wiele wiêcej
 ró¿nych typów operacji zwi±zanych z przedtwarzaniem wsadowym. Pe³en
-opis make znale¼æ mo¿na na stronach info ("info make").
+opis make znale¼æ mo¿na na stronach info ("info make").
 
 %description -l pt_BR
 O programa make é usado para coordenar a compilação e linkedição de um
