@@ -54,7 +54,7 @@ przedtwarzaniem wsadowym. Pe³en opis make znale¼æ mo¿na na stronach info
 
 %build
 %configure
-make "CFLAGS=$RPM_OPT_FLAGS" LDFLAGS="-s"
+make 
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -62,7 +62,8 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/make.info*,%{_mandir}/man1/*}
+gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/make.info*,%{_mandir}/man1/*} \
+	NEWS README
 
 %post
 /sbin/install-info %{_infodir}/make.info.gz /etc/info-dir
@@ -77,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS README
+%doc {NEWS,README}.gz
 %attr(755,root,root) %{_bindir}/*
 
 %{_mandir}/man1/*
