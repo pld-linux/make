@@ -62,7 +62,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 make prefix=$RPM_BUILD_ROOT/usr install
 
-strip $RPM_BUILD_ROOT/usr/bin/make
+strip $RPM_BUILD_ROOT%{_bindir}/make
 
 gzip -9nf $RPM_BUILD_ROOT/usr/{info/make.info*,man/man1/*}
 
@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
 
 %{_mandir}/man1/*
 %{_infodir}/make.info*
