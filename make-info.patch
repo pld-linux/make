@@ -9,7 +9,7 @@ diff -Nru make-3.77/make.texinfo make-3.77.new/make.texinfo
 +@dircategory Programming tools:
  @direntry
 -     * Make: (make.info).               The GNU make utility.
-+* Make: (make)				The GNU make utility
++* Make: (make).				The GNU make utility
  @end direntry
  
  This file documents the GNU Make utility, which determines
