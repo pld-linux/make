@@ -83,9 +83,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_mandir}/man1/*
 %{_infodir}/make.info*
-
-%changelog
-* Thu May 27 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [3.77-7]
-- based on RH spec,
-- spec rewrited by PLD team.
