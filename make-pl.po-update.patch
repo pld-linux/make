@@ -1,13 +1,31 @@
---- make-3.80/po/pl.po.orig	Fri Oct  4 04:13:55 2002
-+++ make-3.80/po/pl.po	Fri Nov  1 12:34:23 2002
-@@ -1,6 +1,7 @@
+--- make-3.80/po/pl.po.orig	2002-10-04 04:13:55.000000000 +0200
++++ make-3.80/po/pl.po	2003-11-13 00:39:25.607396608 +0100
+@@ -1,17 +1,18 @@
  # Polish translation for GNU make.
  # Copyright (C) 1996 Free Software Foundation, Inc.
- # Pawe³ Krawczyk <kravietz@pipeta.chemia.pk.edu.pl>, 1996.
-+# Jakub Bogusz <qboosh@pld.org.pl>, 2002.
+-# Pawe³ Krawczyk <kravietz@pipeta.chemia.pk.edu.pl>, 1996.
++# Pawe³ Krawczyk <kravietz@ceti.pl>, 1996.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2002.
  #
  msgid ""
  msgstr ""
+-"Project-Id-Version: make 3.74.4\n"
++"Project-Id-Version: make 3.80\n"
+ "POT-Creation-Date: 2002-10-03 22:13-0400\n"
+-"PO-Revision-Date: 1996-08-27 21:20+0200\n"
+-"Last-Translator: Pawe³ Krawczyk <kravietz@pipeta.chemia.pk.edu.pl>\n"
+-"Language-Team: Polish <pl@li.org>\n"
++"PO-Revision-Date: 2003-11-08 01:40+0100\n"
++"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
++"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=iso-8859-2\n"
+-"Content-Transfer-Encoding: 8-bit\n"
++"Content-Type: text/plain; charset=ISO-8859-2\n"
++"Content-Transfer-Encoding: 8bit\n"
+ 
+ #: ar.c:56
+ #, c-format
 @@ -45,22 +46,22 @@
  #: arscan.c:71
  #, c-format
@@ -544,7 +562,7 @@
  
  #: job.c:790
 -#, fuzzy, c-format
-+#,  c-format
++#, c-format
  msgid "Released token for child 0x%08lx (%s).\n"
 -msgstr "Zbieram %s potomka 0x%08lx PID %d%s\n"
 +msgstr "Zwolniony token dla potomka 0x%08lx (%s).\n"
@@ -674,7 +692,7 @@
  
  #: job.c:2332
  #, c-format
-@@ -738,88 +729,96 @@
+@@ -738,190 +729,194 @@
  #: job.c:2542
  #, c-format
  msgid "$SHELL changed (was `%s', now `%s')"
@@ -726,9 +744,10 @@
  
  #: main.c:274
 -#, fuzzy
- msgid ""
- "  --debug[=FLAGS]             Print various types of debugging information.\n"
+-msgid ""
+-"  --debug[=FLAGS]             Print various types of debugging information.\n"
 -msgstr "Wy¶wietla du¿o informacji uruchomieniowej"
++msgid "  --debug[=FLAGS]             Print various types of debugging information.\n"
 +msgstr ""
 +"  --debug[=FLAGI]             Wy¶wietla ró¿ne rodzaje informacji\n"
 +"                              diagnostycznych.\n"
@@ -771,28 +790,31 @@
  
  #: main.c:289
 -#, fuzzy
- msgid ""
- "  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no "
- "arg.\n"
+-msgid ""
+-"  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no "
+-"arg.\n"
 -msgstr "Dopuszczaj N zadañ naraz; brak argumentu oznacza bez ograniczeñ"
++msgid "  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.\n"
 +msgstr ""
 +"  -j [N], --jobs[=N]          Dopuszcza N zadañ naraz; brak N oznacza brak\n"
 +"                              ograniczeñ.\n"
  
  #: main.c:291
 -#, fuzzy
- msgid ""
- "  -k, --keep-going            Keep going when some targets can't be made.\n"
+-msgid ""
+-"  -k, --keep-going            Keep going when some targets can't be made.\n"
 -msgstr "Kontynuuj je¶li nie da siê zrobiæ jakich¶ obiektów"
++msgid "  -k, --keep-going            Keep going when some targets can't be made.\n"
 +msgstr ""
 +"  -k, --keep-going            Kontynuuj je¶li nie da siê zrobiæ jakich¶\n"
 +"                              obiektów.\n"
  
  #: main.c:293
  msgid ""
-@@ -827,6 +826,9 @@
- "                              Don't start multiple jobs unless load is below "
- "N.\n"
+ "  -l [N], --load-average[=N], --max-load[=N]\n"
+-"                              Don't start multiple jobs unless load is below "
+-"N.\n"
++"                              Don't start multiple jobs unless load is below N.\n"
  msgstr ""
 +"  -l [N], --load-average[=N], --max-load[=N]\n"
 +"                              Nie uruchamiaj wielu zadañ je¶li load nie jest\n"
@@ -800,18 +822,20 @@
  
  #: main.c:296
  msgid ""
-@@ -834,6 +836,8 @@
- "                              Don't actually run any commands; just print "
- "them.\n"
+ "  -n, --just-print, --dry-run, --recon\n"
+-"                              Don't actually run any commands; just print "
+-"them.\n"
++"                              Don't actually run any commands; just print them.\n"
  msgstr ""
 +"  -n, --just-print, --dry-run, --recon\n"
 +"                              Nie wykonuje poleceñ; jedynie je wy¶wietla.\n"
  
  #: main.c:299
  msgid ""
-@@ -841,87 +845,93 @@
- "                              Consider FILE to be very old and don't remake "
- "it.\n"
+ "  -o FILE, --old-file=FILE, --assume-old=FILE\n"
+-"                              Consider FILE to be very old and don't remake "
+-"it.\n"
++"                              Consider FILE to be very old and don't remake it.\n"
  msgstr ""
 +"  -o PLIK, --old-file=PLIK, --assume-old=PLIK\n"
 +"                              Uznanie PLIKu za bardzo stary i nie tworzenie go\n"
@@ -825,10 +849,11 @@
  
  #: main.c:304
 -#, fuzzy
- msgid ""
- "  -q, --question              Run no commands; exit status says if up to "
- "date.\n"
+-msgid ""
+-"  -q, --question              Run no commands; exit status says if up to "
+-"date.\n"
 -msgstr "Nie uruchamiaj ¿adnych poleceñ; status powrotu wskazuje aktualno¶æ"
++msgid "  -q, --question              Run no commands; exit status says if up to date.\n"
 +msgstr ""
 +"  -q, --question              Nie uruchamia ¿adnych poleceñ; status powrotu\n"
 +"                              wskazuje aktualno¶æ.\n"
@@ -865,11 +890,11 @@
  
  #: main.c:317
 -#, fuzzy
- msgid ""
- "  -v, --version               Print the version number of make and exit.\n"
+-msgid ""
+-"  -v, --version               Print the version number of make and exit.\n"
 -msgstr "Wy¶wietl wersjê make i zakoñcz"
-+msgstr ""
-+"  -v, --version               Wy¶wietla wersjê make i koñczy dzia³anie.\n"
++msgid "  -v, --version               Print the version number of make and exit.\n"
++msgstr "  -v, --version               Wy¶wietla wersjê make i koñczy dzia³anie.\n"
  
  #: main.c:319
 -#, fuzzy
@@ -879,10 +904,11 @@
  
  #: main.c:321
 -#, fuzzy
- msgid ""
- "  --no-print-directory        Turn off -w, even if it was turned on "
- "implicitly.\n"
+-msgid ""
+-"  --no-print-directory        Turn off -w, even if it was turned on "
+-"implicitly.\n"
 -msgstr "Wy³±cza -w, nawet je¶li by³o ono w³±czone domy¶lnie"
++msgid "  --no-print-directory        Turn off -w, even if it was turned on implicitly.\n"
 +msgstr ""
 +"  --no-print-directory        Wy³±cza -w, nawet je¶li by³o ono w³±czone\n"
 +"                              domy¶lnie.\n"
@@ -897,10 +923,11 @@
  
  #: main.c:326
 -#, fuzzy
- msgid ""
- "  --warn-undefined-variables  Warn when an undefined variable is "
- "referenced.\n"
+-msgid ""
+-"  --warn-undefined-variables  Warn when an undefined variable is "
+-"referenced.\n"
 -msgstr "Ostrzegaj przy odwo³aniach do niezdefiniowanych zmiennych"
++msgid "  --warn-undefined-variables  Warn when an undefined variable is referenced.\n"
 +msgstr ""
 +"  --warn-undefined-variables  Ostrzega przy odwo³aniach do niezdefiniowanych\n"
 +"                              zmiennych.\n"
@@ -924,7 +951,7 @@
  
  #: main.c:638
  #, c-format
-@@ -932,39 +942,44 @@
+@@ -932,39 +927,44 @@
  "ExceptionFlags = %x\n"
  "ExceptionAddress = %x\n"
  msgstr ""
@@ -976,7 +1003,7 @@
  
  #: main.c:1367
  msgid "fwrite (temporary file)"
-@@ -972,54 +987,54 @@
+@@ -972,54 +972,52 @@
  
  #: main.c:1453
  msgid "Do not specify -j or --jobs if sh.exe is not available."
@@ -1020,10 +1047,11 @@
 +msgstr "duplikacja serwera zadañ"
  
  #: main.c:1537
- msgid ""
- "warning: jobserver unavailable: using -j1.  Add `+' to parent make rule."
- msgstr ""
-+"uwaga: serwer zadañ niedostêpny: u¿ywanie -j1.  Nale¿y dodaæ `+' do nadrzêdnej regu³y make."
+-msgid ""
+-"warning: jobserver unavailable: using -j1.  Add `+' to parent make rule."
+-msgstr ""
++msgid "warning: jobserver unavailable: using -j1.  Add `+' to parent make rule."
++msgstr "uwaga: serwer zadañ niedostêpny: u¿ywanie -j1.  Nale¿y dodaæ `+' do nadrzêdnej regu³y make."
  
  #: main.c:1560
  msgid "creating jobs pipe"
@@ -1043,7 +1071,7 @@
  
  #: main.c:1679
  #, c-format
-@@ -1047,34 +1062,32 @@
+@@ -1047,34 +1045,32 @@
  
  #: main.c:1878
  msgid "Re-executing:"
@@ -1084,7 +1112,7 @@
  
  #: main.c:2133
  #, c-format
-@@ -1082,6 +1095,8 @@
+@@ -1082,6 +1078,8 @@
  "\n"
  "This program built for %s\n"
  msgstr ""
@@ -1093,7 +1121,7 @@
  
  #: main.c:2135
  #, c-format
-@@ -1089,10 +1104,12 @@
+@@ -1089,10 +1087,12 @@
  "\n"
  "This program built for %s (%s)\n"
  msgstr ""
@@ -1107,12 +1135,12 @@
  
  #: main.c:2259
  #, c-format
-@@ -1100,19 +1117,15 @@
+@@ -1100,19 +1100,15 @@
  msgstr "opcja `-%c' wymaga argumentu ca³kowitego dodatniego"
  
  #: main.c:2687
 -#, fuzzy, c-format
-+#,  c-format
++#, c-format
  msgid ""
  "%sThis is free software; see the source for copying conditions.\n"
  "%sThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A\n"
@@ -1128,7 +1156,7 @@
  
  #: main.c:2707
  #, c-format
-@@ -1130,47 +1143,47 @@
+@@ -1130,47 +1126,47 @@
  "# Finished Make data base on %s\n"
  msgstr ""
  "\n"
@@ -1193,7 +1221,7 @@
  
  #: misc.c:309
  msgid ".  Stop.\n"
-@@ -1184,48 +1197,46 @@
+@@ -1184,48 +1180,46 @@
  #: misc.c:342
  #, c-format
  msgid "%s%s: %s"
@@ -1252,7 +1280,7 @@
  
  #: read.c:293
  msgid " (no default goal)"
-@@ -1260,9 +1271,8 @@
+@@ -1260,9 +1254,8 @@
  msgstr "pusta dyrektywa `override'"
  
  #: read.c:661
@@ -1263,7 +1291,7 @@
  
  #: read.c:776
  #, c-format
-@@ -1271,20 +1281,20 @@
+@@ -1271,20 +1264,20 @@
  
  #: read.c:847
  msgid "commands commence before first target"
@@ -1288,7 +1316,7 @@
  
  #: read.c:1142
  msgid "missing target pattern"
-@@ -1327,7 +1337,7 @@
+@@ -1327,7 +1320,7 @@
  
  #: read.c:1692
  msgid "Malformed per-target variable definition"
@@ -1297,7 +1325,7 @@
  
  #: read.c:1785
  msgid "mixed implicit and static pattern rules"
-@@ -1343,9 +1353,9 @@
+@@ -1343,9 +1336,9 @@
  msgstr "obiekt `%s' nie pasuje do wzorca obiektu"
  
  #: read.c:1851
@@ -1309,7 +1337,16 @@
  
  #: read.c:1962 read.c:2062
  #, c-format
-@@ -1382,14 +1392,14 @@
+@@ -1374,7 +1367,7 @@
+ #: remake.c:231
+ #, c-format
+ msgid "Nothing to be done for `%s'."
+-msgstr "Nie nic do roboty w `%s'."
++msgstr "Nie ma nic do roboty w `%s'."
+ 
+ #: remake.c:232
+ #, c-format
+@@ -1382,14 +1375,14 @@
  msgstr "`%s' jest aktualne."
  
  #: remake.c:300
@@ -1327,11 +1364,15 @@
  
  #: remake.c:361
  #, c-format
-@@ -1421,11 +1431,12 @@
- msgid ""
- "*** Warning: .LOW_RESOLUTION_TIME file `%s' has a high resolution time stamp"
- msgstr ""
-+"*** Uwaga: plik .LOW_RESOLUTION_TIME `%s' ma du¿± rozdzielczo¶æ znacznika czasu"
+@@ -1418,14 +1411,13 @@
+ 
+ #: remake.c:406
+ #, c-format
+-msgid ""
+-"*** Warning: .LOW_RESOLUTION_TIME file `%s' has a high resolution time stamp"
+-msgstr ""
++msgid "*** Warning: .LOW_RESOLUTION_TIME file `%s' has a high resolution time stamp"
++msgstr "*** Uwaga: plik .LOW_RESOLUTION_TIME `%s' ma du¿± rozdzielczo¶æ znacznika czasu"
  
  #: remake.c:419 remake.c:872
  #, c-format
@@ -1341,7 +1382,7 @@
  
  #: remake.c:421 remake.c:874
  #, c-format
-@@ -1435,7 +1446,7 @@
+@@ -1435,7 +1427,7 @@
  #: remake.c:427 remake.c:880
  #, c-format
  msgid "Using default commands for `%s'.\n"
@@ -1350,7 +1391,7 @@
  
  #: remake.c:448 remake.c:906
  #, c-format
-@@ -1443,12 +1454,12 @@
+@@ -1443,12 +1435,12 @@
  msgstr "Okrê¿na dyrektywa %s <- %s porzucona."
  
  #: remake.c:530
@@ -1366,7 +1407,7 @@
  msgid "The prerequisites of `%s' are being made.\n"
  msgstr "Zale¿no¶ci `%s' s± wykonywane.\n"
  
-@@ -1465,47 +1476,47 @@
+@@ -1465,47 +1457,47 @@
  #: remake.c:606
  #, c-format
  msgid "Prerequisite `%s' is order-only for target `%s'.\n"
@@ -1427,7 +1468,7 @@
  
  #: remake.c:679
  #, c-format
-@@ -1515,7 +1526,7 @@
+@@ -1515,7 +1507,7 @@
  #: remake.c:685
  #, c-format
  msgid "  Ignoring VPATH name `%s'.\n"
@@ -1436,7 +1477,7 @@
  
  #: remake.c:694
  #, c-format
-@@ -1548,19 +1559,19 @@
+@@ -1548,19 +1540,19 @@
  msgstr "%sBrak regu³ do zrobienia obiektu `%s', wymaganego przez `%s'%s"
  
  #: remake.c:1227
@@ -1461,7 +1502,7 @@
  
  #: remote-cstms.c:127
  #, c-format
-@@ -1594,7 +1605,7 @@
+@@ -1594,7 +1586,7 @@
  
  #: rule.c:684
  msgid " terminal."
@@ -1470,7 +1511,7 @@
  
  #: rule.c:692
  #, c-format
-@@ -1606,12 +1617,16 @@
+@@ -1606,12 +1598,16 @@
  "\n"
  "# Pattern-specific variable values"
  msgstr ""
@@ -1487,7 +1528,7 @@
  
  #: rule.c:714
  #, c-format
-@@ -1619,6 +1634,8 @@
+@@ -1619,6 +1615,8 @@
  "\n"
  "# %u pattern-specific variable values"
  msgstr ""
@@ -1496,7 +1537,7 @@
  
  #: signame.c:90
  msgid "unknown signal"
-@@ -1670,7 +1687,7 @@
+@@ -1670,7 +1668,7 @@
  
  #: signame.c:133
  msgid "Segmentation fault"
@@ -1505,7 +1546,7 @@
  
  #: signame.c:136
  msgid "Bad system call"
-@@ -1774,7 +1791,7 @@
+@@ -1774,7 +1772,7 @@
  
  #: signame.c:226
  msgid "Floating point co-processor not available"
@@ -1514,7 +1555,7 @@
  
  #: variable.c:1140
  msgid "default"
-@@ -1807,12 +1824,11 @@
+@@ -1807,12 +1805,11 @@
  #: variable.c:1167
  #, c-format
  msgid " (from `%s', line %lu)"
@@ -1529,7 +1570,7 @@
  
  #: variable.c:1222
  msgid ""
-@@ -1825,7 +1841,7 @@
+@@ -1825,7 +1822,7 @@
  #: vmsfunctions.c:80
  #, c-format
  msgid "sys$search failed with %d\n"
@@ -1538,7 +1579,7 @@
  
  #: vpath.c:553
  msgid ""
-@@ -1865,215 +1881,3 @@
+@@ -1865,215 +1862,3 @@
  "\n"
  "# Ogólna (zmienna `VPATH') ¶cie¿ka przeszukiwania:\n"
  "# "
