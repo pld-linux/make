@@ -1,0 +1,12 @@
+diff -urN make-3.79.1.orig/i18n/pl.po make-3.79.1/i18n/pl.po
+--- make-3.79.1.orig/i18n/pl.po	Tue Jan 25 08:42:51 2000
++++ make-3.79.1/i18n/pl.po	Tue May  1 14:58:50 2001
+@@ -726,7 +726,7 @@
+ 
+ #: main.c:2053
+ msgid "Entering"
+-msgstr "Wchodzê"
++msgstr "Wchodzê w"
+ 
+ #: main.c:2053
+ msgid "Leaving"
