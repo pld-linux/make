@@ -4,14 +4,14 @@ Summary(fr):	L'utilitaire make de GNU
 Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
-Version:	3.77
-Release:	9
+Version:	3.78.1
+Release:	1
+Serial:		1
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
 Source:		ftp://prep.ai.mit.edu/pub/gnu/make/%{name}-%{version}.tar.gz
 Patch0:		make-info.patch
-Patch1:		make-fixes.patch
 Prereq:		/usr/sbin/fix-info-dir
 Buildroot:	/tmp/%{name}-%{version}-root
 
@@ -54,7 +54,6 @@ yitirilmesini önler.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 LDFLAGS="-s"; export LDFLAGS
