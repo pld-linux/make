@@ -53,7 +53,7 @@ przedtwarzaniem wsadowym. Pe³en opis make znale¼æ mo¿na na stronach info
 %patch1 -p1
 
 %build
-./configure --prefix=/usr
+%configure
 make "CFLAGS=$RPM_OPT_FLAGS"
 
 %install
