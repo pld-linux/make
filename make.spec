@@ -5,12 +5,13 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.77
-Release:	4
+Release:	5
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
 Source:		ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
-Patch:		make-info.patch
+Patch0:		make-info.patch
+Patch1:		make-fixes.patch
 Prereq:		/sbin/install-info
 Buildroot:	/tmp/%{name}-%{version}-root
 
@@ -48,7 +49,8 @@ przedtwarzaniem wsadowym. Pe³en opis make znale¼æ mo¿na na stronach info
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 ./configure --prefix=/usr
@@ -84,6 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/info/make.info*
 
 %changelog
+* Sat Feb 27 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [3.77-5]
+- added a patch for large file support in glob.
+
 * Wed Feb 24 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [3.77-4]
 - standarized {un}registering info pages (added make-info.patch).
