@@ -1,8 +1,12 @@
 Summary:	GNU Make
 Summary(de):	GNU Make
+Summary(es):	GNU Make
 Summary(fr):	L'utilitaire make de GNU
 Summary(pl):	GNU Make
+Summary(pt_BR):	GNU Make
+Summary(ru):	GNU Make
 Summary(tr):	GNU Make
+Summary(uk):	GNU Make
 Name:		make
 Version:	3.79.1
 Release:	14
@@ -28,16 +32,19 @@ knowledge about the details of the build process. The details about
 how the program should be built are provided for make in the program's
 makefile.
 
-The GNU make tool should be installed on your system because it is
-commonly used to simplify the process of installing programs.
-
 %description -l de
 Das MAKE-Programm dient zur Koordination der Kompilierung und zum
 Linken eines Satzes von Quellen in ein Programm, wobei nur die
 erforderlichen Komponenten neu kompiliert werden, so daъ der
 Entwickler eine Menge Zeit spart. Aber damit sind die FДhigkeiten von
-MAKE noch lange nicht erschЖpft
-- lesen Sie die Info-Dokumente.
+MAKE noch lange nicht erschЖpft - lesen Sie die Info-Dokumente.
+
+%description -l es
+El programa make se usa para coordinar la compilaciСn y linkediciСn de
+un conjunto de programas fuentes en programas ejecutables,
+recompilando solamente lo que es necesario, de este modo ahorra mucho
+tiempo del programador. De hecho, make puede hacer mucho mАs - lee la
+documentaciСn.
 
 %description -l fr
 make sert Ю coordonner la compilation et l'Иdition de liens d'un
@@ -53,10 +60,31 @@ make oszczЙdzaj╠c tym samym czas. Make mo©e wykonywaФ o wiele wiЙcej
 rС©nych typСw operacji zwi╠zanych z przedtwarzaniem wsadowym. PeЁen
 opis make znale╪Ф mo©na na═stronach info ("info make").
 
+%description -l pt_BR
+O programa make И usado para coordenar a compilaГЦo e linkediГЦo de um
+conjunto de programas fontes em programas executАveis, recompilando
+somente o que И necessАrio, desse modo economizando um grande tempo do
+programador. De fato, make pode fazer muito mais - leia a
+documentaГЦo.
+
+%description -l ru
+Программа make используется для управления процессом компилляции и
+линковки набора исходных текстов в программу, перекомпилляции только
+того, что необходимо и сохранения, таким образом, кучи времени
+разработчику. На самом деле, она может намного больше - прочитайте
+документацию в формате info...
+
 %description -l tr
 Bu program kaynak kodlarЩnЩn derlenmesini ve baПlanmasЩnЩ koordine
 etmek iГin kullanЩlЩr. Sadece gerekli olan programlarЩ tekrar
 derleyerek zaman yitirilmesini Жnler.
+
+%description -l uk
+Програма make використову╓ться для керування процесом комп╕ляц╕╖ та
+л╕нковки набору вих╕дних текст╕в у програму, перекомп╕ляц╕╖ т╕льки
+того, що потр╕бно ╕ збереженн╕, таким чином, часу програм╕ста.
+Фактично, make може набагато б╕льше - прочитайте документац╕ю в
+формат╕ info...
 
 %prep
 %setup -q
