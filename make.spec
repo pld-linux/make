@@ -5,7 +5,7 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.79.1
-Release:	11
+Release:	12
 Epoch:		1
 License:	GPL
 Group:		Development/Building
