@@ -15,7 +15,7 @@ License:	GPL
 Group:		Development/Building
 Source0:	ftp://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.gz
 # Source0-md5: c68540da9302a48068d5cce1f0099477
-Source1:	%{name}-non-english-man-pages.tar.bz2
+Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5: ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
