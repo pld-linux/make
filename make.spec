@@ -1,11 +1,11 @@
 Summary:     GNU Make
 Summary(de): GNU Make
 Summary(fr): L'utilitaire make de GNU
-Summary(tr): GNU Make
 Summary(pl): GNU Make
+Summary(tr): GNU Make
 Name:        make
 Version:     3.77
-Release:     1
+Release:     3
 Copyright:   GPL
 Group:       Development/Building
 Source:      ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
@@ -60,12 +60,12 @@ gzip -9nf $RPM_BUILD_ROOT/usr/info/make.info*
 strip $RPM_BUILD_ROOT/usr/bin/make
 
 %post
-/sbin/install-info /usr/info/make.info.gz /usr/info/dir --entry="* GNU make: (make).           The GNU make utility."
+/sbin/install-info /usr/info/make.info.gz /usr/info/dir --entry \
+"* GNU make: (make).                             The GNU make utility."
 
 %preun
-if [ $1 = 0 ]; then
-   /sbin/install-info --delete /usr/info/make.info.gz /usr/info/dir --entry="* GNU make: (make).           The GNU make utility."
-fi
+/sbin/install-info --delete /usr/info/make.info.gz /usr/info/dir --entry \
+"* GNU make: (make).                             The GNU make utility."
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,6 +78,13 @@ rm -rf $RPM_BUILD_ROOT
 /usr/info/make.info*
 
 %changelog
+* Sun Nov 22 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [3.77-3]
+- fixed --entry text on {un}registering info page for ed in %post
+  %preun.
+- added Cristian Gafton <gafton@redhat.com> patch for large file
+  support in glob.
+
 * Sat Aug  1 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [3.77-1]
 - added pl translation,
