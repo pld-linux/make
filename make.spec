@@ -5,7 +5,7 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.77
-Release:	7
+Release:	8
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -34,11 +34,6 @@ sources pour produire un programme, ne recompilant que ce qui est nécessaire
 et économisant ainsi beaucoup de temps. En fait, make peut faire beaucoup
 plus -- voir les docs info.
 
-%description -l tr
-Bu program kaynak kodlarýnýn derlenmesini ve baðlanmasýný koordine etmek
-için kullanýlýr. Sadece gerekli olan programlarý tekrar derleyerek zaman
-yitirilmesini önler.
-
 %description -l pl
 Make jest u¿ywany do automatyzacji procesów kompilowania kodu ¼ród³owego i
 konsolidacji kodu programów wykonuj±c tylko te czynno¶ci które s± potrzebne
@@ -47,12 +42,18 @@ czas. Make mo¿e wykonywaæ o wiele wiêcej ró¿nych typów operacji zwi±zanych z
 przedtwarzaniem wsadowym. Pe³en opis make znale¼æ mo¿na na stronach info
 ("info make").
 
+%description -l tr
+Bu program kaynak kodlarýnýn derlenmesini ve baðlanmasýný koordine etmek
+için kullanýlýr. Sadece gerekli olan programlarý tekrar derleyerek zaman
+yitirilmesini önler.
+
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
 
 %build
+LDFLAGS="-s"; export LDFLAGS
 %configure
 make 
 
