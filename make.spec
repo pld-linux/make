@@ -5,13 +5,17 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.79.1
-Release:	2
-Serial:		1
+Release:	7
+Epoch:		1
 License:	GPL
 Group:		Development/Building
+Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/make/%{name}-%{version}.tar.gz
-Patch0:		make-info.patch
+Source1:	%{name}.1.pl
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-noclock_gettime.patch
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -55,20 +59,21 @@ derleyerek zaman yitirilmesini önler.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-LDFLAGS="-s"; export LDFLAGS
+autoconf
 %configure
 %{__make} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT%{_mandir}/{,pl}/man1
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/make.1
 
-gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/make.info*,%{_mandir}/man1/*} \
-	NEWS README
+gzip -9nf NEWS README
 
 %find_lang %{name}
 
@@ -87,4 +92,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 
 %{_mandir}/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
 %{_infodir}/make.info*
