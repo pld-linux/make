@@ -5,11 +5,11 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.77
-Release:	6
+Release:	7
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
-Source:		ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
+Source:		ftp://prep.ai.mit.edu/pub/gnu/make/%{name}-%{version}.tar.gz
 Patch0:		make-info.patch
 Patch1:		make-fixes.patch
 Prereq:		/sbin/install-info
@@ -60,11 +60,11 @@ make "CFLAGS=$RPM_OPT_FLAGS"
 rm -f $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
-make prefix=$RPM_BUILD_ROOT/usr install
+make prefix=$RPM_BUILD_ROOT%{_prefix} install
 
 strip $RPM_BUILD_ROOT%{_bindir}/make
 
-gzip -9nf $RPM_BUILD_ROOT/usr/{info/make.info*,man/man1/*}
+gzip -9nf $RPM_BUILD_ROOT{%{_infosir}/make.info*,%{_mandir}/man1/*}
 
 %post
 /sbin/install-info %{_infodir}/make.info.gz /etc/info-dir
@@ -86,47 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/make.info*
 
 %changelog
-* Sat Apr 24 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [3.77-6]
-- recompiled on new rpm.
-
-* Sat Feb 27 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [3.77-5]
-- added a patch for large file support in glob.
-
-* Wed Feb 24 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [3.77-4]
-- standarized {un}registering info pages (added make-info.patch).
-- added gzipping man pages,
-- added Group(pl),
-- removed man group from man pages.
-
-* Sun Nov 22 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [3.77-3]
-- fixed --entry text on {un}registering info page for ed in %post
-  %preun.
-- added Cristian Gafton <gafton@redhat.com> patch for large file
-  support in glob.
-
-* Sat Aug  1 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [3.77-1]
-- added pl translation,
-- added -q %setup parameter,
-- Buildroot changed to /tmp/%%{name}-%%{version}-root,
-- replaced "mkdir -p" with "install -d" in %install,
-- removed making gmake man page as symlink to man.1,
-- added using %%{name} and %%{version} macro in Source,
-- added %defattr and %attr macros in %files (allows building package from
-  non-root account).
-
-* Mon Apr 27 1998 Prospector System <bugs@redhat.com>
-  [3.76.1-3]
-- translations modified for de, fr, tr
-
-* Thu Oct 16 1997 Donnie Barnes <djb@redhat.com>
-- udpated from 3.75 to 3.76
-- various spec file cleanups
-- added install-info support
-
-* Mon Jun 02 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
+* Thu May 27 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
+  [3.77-7]
+- based on RH spec,
+- spec rewrited by PLD team.
