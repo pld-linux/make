@@ -5,7 +5,7 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.77
-Release:	5
+Release:	6
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -86,6 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/info/make.info*
 
 %changelog
+* Sat Apr 24 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [3.77-6]
+- recompiled on new rpm.
+
 * Sat Feb 27 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [3.77-5]
 - added a patch for large file support in glob.
