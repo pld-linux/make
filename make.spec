@@ -5,21 +5,25 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.77
-Release:	8
+Release:	9
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
 Source:		ftp://prep.ai.mit.edu/pub/gnu/make/%{name}-%{version}.tar.gz
 Patch0:		make-info.patch
 Patch1:		make-fixes.patch
-Prereq:		/sbin/install-info
+Prereq:		/usr/sbin/fix-info-dir
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
-The program make is used to coordinate the compilation and linking of a set
-of sources into a program, recompiling only what is necessary, thus saving a
-developer a lot of time. In fact, make can do a lot more - read the info
-docs.
+A GNU tool for controlling the generation of executables and other
+non-source files of a program from the program's source files.  Make allows
+users to build and install packages without any significant knowledge about
+the details of the build process.  The details about how the program should
+be built are provided for make in the program's makefile.
+
+The GNU make tool should be installed on your system because it is commonly
+used to simplify the process of installing programs.
 
 %description -l de
 Das MAKE-Programm dient zur Koordination der Kompilierung und zum Linken
@@ -67,12 +71,10 @@ gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/make.info*,%{_mandir}/man1/*} \
 	NEWS README
 
 %post
-/sbin/install-info %{_infodir}/make.info.gz /etc/info-dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun
-if [ "$1" = "0" ]; then
-	/sbin/install-info --delete %{_infodir}/make.info.gz /etc/info-dir
-fi
+%postun
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
