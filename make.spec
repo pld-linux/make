@@ -4,7 +4,7 @@ Summary(fr):	L'utilitaire make de GNU
 Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
-Version:	3.79
+Version:	3.79.1
 Release:	2
 Serial:		1
 License:	GPL
