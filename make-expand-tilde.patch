@@ -1,0 +1,11 @@
+--- make-3.79.1/job.c~	Fri Jun 23 17:54:56 2000
++++ make-3.79.1/job.c	Sun May 26 15:23:20 2002
+@@ -2421,7 +2421,7 @@
+   char*  sh_chars;
+   char** sh_cmds;
+ #else  /* WINDOWS32 */
+-  static char sh_chars[] = "#;\"*?[]&|<>(){}$`^";
++  static char sh_chars[] = "#;\"*?[]&|<>(){}$`^~";
+   static char *sh_cmds[] = { "cd", "eval", "exec", "exit", "login",
+ 			     "logout", "set", "umask", "wait", "while", "for",
+ 			     "case", "if", ":", ".", "break", "continue",
