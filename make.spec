@@ -9,7 +9,7 @@ Summary(tr):	GNU Make
 Summary(uk):	GNU Make
 Name:		make
 Version:	3.80
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -97,7 +97,9 @@ derleyerek zaman yitirilmesini önler.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 %find_lang %{name}
