@@ -2,14 +2,14 @@ Summary:	GNU Make
 Summary(de):	GNU Make
 Summary(es):	GNU Make
 Summary(fr):	L'utilitaire make de GNU
-Summary(pl):	GNU Make
+Summary(pl):	Narzêdzie GNU Make
 Summary(pt_BR):	GNU Make
 Summary(ru):	GNU Make
 Summary(tr):	GNU Make
 Summary(uk):	GNU Make
 Name:		make
 Version:	3.80
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Building
