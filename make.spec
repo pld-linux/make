@@ -5,7 +5,7 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.79.1
-Release:	7
+Release:	8
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -16,6 +16,7 @@ Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-noclock_gettime.patch
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -62,9 +63,9 @@ derleyerek zaman yitirilmesini önler.
 %patch1 -p1
 
 %build
-automake -a -c
 aclocal
 autoconf
+automake -a -c
 %configure
 %{__make} 
 
