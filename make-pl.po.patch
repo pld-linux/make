@@ -10,3 +10,12 @@ diff -urN make-3.79.1.orig/i18n/pl.po make-3.79.1/i18n/pl.po
  
  #: main.c:2053
  msgid "Leaving"
+@@ -911,7 +911,7 @@
+ #: remake.c:212
+ #, possible-c-format
+ msgid "Nothing to be done for `%s'."
+-msgstr "Nie nic do roboty w `%s'."
++msgstr "Nie ma nic do roboty w `%s'."
+ 
+ #: remake.c:213
+ #, possible-c-format
