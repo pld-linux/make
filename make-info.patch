@@ -1,15 +1,14 @@
-diff -Nru make-3.78.1/make.texinfo make-3.78.1.new/make.texinfo
---- make-3.78.1/make.texinfo	Thu Sep 23 19:40:19 1999
-+++ make-3.78.1.new/make.texinfo	Thu Oct  7 03:30:35 1999
-@@ -24,9 +24,9 @@
+--- make-3.80/doc/make.texi.orig	Wed Sep 18 22:51:58 2002
++++ make-3.80/doc/make.texi	Fri Oct  4 21:25:12 2002
+@@ -25,9 +25,9 @@
  @c Combine the program and concept indices:
  @syncodeindex pg cp
  
 -@dircategory GNU Packages
-+@dircategory  Programming tools:
++@dircategory Programming tools:
  @direntry
 -* Make: (make).            Remake files automatically.
-+* Make: (make).				The GNU make utility
++* Make: (make).				Remake files automatically
  @end direntry
  
  @ifinfo
