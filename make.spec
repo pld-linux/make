@@ -5,7 +5,7 @@ Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
 Version:	3.79
-Release:	1
+Release:	2
 Serial:		1
 License:	GPL
 Group:		Development/Building
