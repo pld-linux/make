@@ -20,6 +20,7 @@ Patch1:		%{name}-noclock_gettime.patch
 Patch2:		%{name}-pl.po.patch
 Patch3:		%{name}-ac250.patch
 Patch4:		%{name}-expand-tilde.patch
+Patch5:		%{name}-ac253.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -93,6 +94,7 @@ derleyerek zaman yitirilmesini önler.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 rm missing
@@ -109,9 +111,10 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf NEWS README
-
 %find_lang %{name}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -119,12 +122,9 @@ gzip -9nf NEWS README
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc {NEWS,README}.gz
+%doc NEWS README
 %attr(755,root,root) %{_bindir}/*
 
 %{_mandir}/man1/*
