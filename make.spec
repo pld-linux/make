@@ -1,16 +1,18 @@
-Summary:     GNU Make
-Summary(de): GNU Make
-Summary(fr): L'utilitaire make de GNU
-Summary(pl): GNU Make
-Summary(tr): GNU Make
-Name:        make
-Version:     3.77
-Release:     3
-Copyright:   GPL
-Group:       Development/Building
-Source:      ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
-Prereq:      /sbin/install-info
-Buildroot:   /tmp/%{name}-%{version}-root
+Summary:	GNU Make
+Summary(de):	GNU Make
+Summary(fr):	L'utilitaire make de GNU
+Summary(pl):	GNU Make
+Summary(tr):	GNU Make
+Name:		make
+Version:	3.77
+Release:	4
+Copyright:	GPL
+Group:		Development/Building
+Group(pl):	Programowanie/Budowanie
+Source:		ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
+Patch:		make-info.patch
+Prereq:		/sbin/install-info
+Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
 The program make is used to coordinate the compilation and linking of a set
@@ -46,38 +48,49 @@ przedtwarzaniem wsadowym. Pe³en opis make znale¼æ mo¿na na stronach info
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 ./configure --prefix=/usr
-make "CFLAGS=$RPM_OPT_FLAGS" 
+make "CFLAGS=$RPM_OPT_FLAGS"
 
 %install
-rm -f $RPM_BUILD_ROOT/usr/info/make.info*
+rm -f $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/usr/man/man1
 
 make prefix=$RPM_BUILD_ROOT/usr install
-gzip -9nf $RPM_BUILD_ROOT/usr/info/make.info*
+
 strip $RPM_BUILD_ROOT/usr/bin/make
 
+gzip -9nf $RPM_BUILD_ROOT/usr/{info/make.info*,man/man1/*}
+
 %post
-/sbin/install-info /usr/info/make.info.gz /usr/info/dir --entry \
-"* GNU make: (make).                             The GNU make utility."
+/sbin/install-info /usr/info/make.info.gz /etc/info-dir
 
 %preun
-/sbin/install-info --delete /usr/info/make.info.gz /usr/info/dir --entry \
-"* GNU make: (make).                             The GNU make utility."
+if [ "$1" = "0" ]; then
+	/sbin/install-info --delete /usr/info/make.info.gz /etc/info-dir
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %doc NEWS README
-%attr(755, root, root) /usr/bin/*
-%attr(644, root,  man) /usr/man/man1/*
+%attr(755,root,root) /usr/bin/*
+
+/usr/man/man1/*
 /usr/info/make.info*
 
 %changelog
+* Wed Feb 24 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [3.77-4]
+- standarized {un}registering info pages (added make-info.patch).
+- added gzipping man pages,
+- added Group(pl),
+- removed man group from man pages.
+
 * Sun Nov 22 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [3.77-3]
 - fixed --entry text on {un}registering info page for ed in %post
