@@ -1,0 +1,15 @@
+diff -Nru make-3.77/make.texinfo make-3.77.new/make.texinfo
+--- make-3.77/make.texinfo	Tue Jul 28 06:15:17 1998
++++ make-3.77.new/make.texinfo	Thu Feb 25 06:35:08 1999
+@@ -25,9 +25,9 @@
+ @syncodeindex pg cp
+ 
+ @ifinfo
+-@dircategory The GNU make utility
++@dircategory Programming tools:
+ @direntry
+-     * Make: (make.info).               The GNU make utility.
++* Make: (make)				The GNU make utility.
+ @end direntry
+ 
+ This file documents the GNU Make utility, which determines
