@@ -9,7 +9,7 @@ Summary(tr):	GNU Make
 Summary(uk):	GNU Make
 Name:		make
 Version:	3.80
-Release:	5
+Release:	6
 Epoch:		1
 License:	GPL
 Group:		Development/Building
