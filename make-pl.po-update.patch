@@ -1342,7 +1342,7 @@
  #, c-format
  msgid "Nothing to be done for `%s'."
 -msgstr "Nie nic do roboty w `%s'."
-+msgstr "Nie ma nic do roboty w `%s'."
++msgstr "Nie ma nic do zrobienia w `%s'."
  
  #: remake.c:232
  #, c-format
