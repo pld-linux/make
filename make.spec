@@ -34,16 +34,16 @@ MAKE noch lange nicht erschöpft
 - lesen Sie die Info-Dokumente.
 
 %description -l fr
-%{__make} sert à coordonner la compilation et l'édition de liens d'un
+make sert à coordonner la compilation et l'édition de liens d'un
 ensemble de sources pour produire un programme, ne recompilant que ce
 qui est nécessaire et économisant ainsi beaucoup de temps. En fait,
-%{__make} peut faire beaucoup plus -- voir les docs info.
+make peut faire beaucoup plus -- voir les docs info.
 
 %description -l pl
 Make jest u¿ywany do automatyzacji procesów kompilowania kodu
 ¼ród³owego i konsolidacji kodu programów wykonuj±c tylko te czynno¶ci
 które s± potrzebne w razie modyfikacji plików przetwarzanych przez
-%{__make} oszczêdzaj±c tym samym czas. Make mo¿e wykonywaæ o wiele wiêcej
+make oszczêdzaj±c tym samym czas. Make mo¿e wykonywaæ o wiele wiêcej
 ró¿nych typów operacji zwi±zanych z przedtwarzaniem wsadowym. Pe³en
 opis make znale¼æ mo¿na na stronach info ("info make").
 
