@@ -4,15 +4,14 @@ Summary(fr):	L'utilitaire make de GNU
 Summary(pl):	GNU Make
 Summary(tr):	GNU Make
 Name:		make
-Version:	3.78.1
-Release:	4
+Version:	3.79
+Release:	1
 Serial:		1
 License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/make/%{name}-%{version}.tar.gz
 Patch0:		make-info.patch
-Patch1:		make-race.patch
 Prereq:		/usr/sbin/fix-info-dir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,7 +54,6 @@ yitirilmesini önler.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 LDFLAGS="-s"; export LDFLAGS
@@ -71,6 +69,8 @@ make install DESTDIR=$RPM_BUILD_ROOT
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/make.info*,%{_mandir}/man1/*} \
 	NEWS README
 
+%find_lang %{name}
+
 %post
 %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
@@ -80,7 +80,7 @@ gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/make.info*,%{_mandir}/man1/*} \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc {NEWS,README}.gz
 %attr(755,root,root) %{_bindir}/*
