@@ -16,6 +16,7 @@ Group:		Development/Building
 Source0:	ftp://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.gz
 Source1:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/make/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -83,7 +84,8 @@ derleyerek zaman yitirilmesini önler.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 %configure
