@@ -1,0 +1,5 @@
+- release 9,
+- new {un}registering procedure for info pages with using
+  /usr/sbin/fix-info-dir,
+- new %description.
+- new %description.
