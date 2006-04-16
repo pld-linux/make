@@ -18,6 +18,7 @@ Source0:	ftp://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.gz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	automake
 BuildRequires:	texinfo
@@ -88,6 +89,9 @@ derleyerek zaman yitirilmesini önler.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+rm -f po/stamp-po
 
 %build
 cp -f /usr/share/automake/config.sub config
