@@ -20,10 +20,9 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/make/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	gettext-devel
-BuildRequires:	libtool
+BuildRequires:	autoconf >= 2.59
+BuildRequires:	automake >= 1:1.9
+BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -98,12 +97,10 @@ rm -f po/stamp-po
 
 %build
 %{__gettextize}
-%{__libtoolize}
 %{__aclocal} -I config
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
 
