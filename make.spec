@@ -1,12 +1,12 @@
 Summary:	GNU Make
-Summary(de):	GNU Make
-Summary(es):	GNU Make
-Summary(fr):	L'utilitaire make de GNU
-Summary(pl):	NarzЙdzie GNU Make
-Summary(pt_BR):	GNU Make
-Summary(ru):	GNU Make
-Summary(tr):	GNU Make
-Summary(uk):	GNU Make
+Summary(de.UTF-8):   GNU Make
+Summary(es.UTF-8):   GNU Make
+Summary(fr.UTF-8):   L'utilitaire make de GNU
+Summary(pl.UTF-8):   Narzд≥dzie GNU Make
+Summary(pt_BR.UTF-8):   GNU Make
+Summary(ru.UTF-8):   GNU Make
+Summary(tr.UTF-8):   GNU Make
+Summary(uk.UTF-8):   GNU Make
 Name:		make
 Version:	3.81
 Release:	1
@@ -34,59 +34,59 @@ knowledge about the details of the build process. The details about
 how the program should be built are provided for make in the program's
 makefile.
 
-%description -l de
+%description -l de.UTF-8
 Das MAKE-Programm dient zur Koordination der Kompilierung und zum
 Linken eines Satzes von Quellen in ein Programm, wobei nur die
-erforderlichen Komponenten neu kompiliert werden, so daъ der
-Entwickler eine Menge Zeit spart. Aber damit sind die FДhigkeiten von
-MAKE noch lange nicht erschЖpft - lesen Sie die Info-Dokumente.
+erforderlichen Komponenten neu kompiliert werden, so daц÷ der
+Entwickler eine Menge Zeit spart. Aber damit sind die Fц╓higkeiten von
+MAKE noch lange nicht erschц╤pft - lesen Sie die Info-Dokumente.
 
-%description -l es
-El programa make se usa para coordinar la compilaciСn y linkediciСn de
+%description -l es.UTF-8
+El programa make se usa para coordinar la compilaciцЁn y linkediciцЁn de
 un conjunto de programas fuentes en programas ejecutables,
 recompilando solamente lo que es necesario, de este modo ahorra mucho
-tiempo del programador. De hecho, make puede hacer mucho mАs - lee la
-documentaciСn.
+tiempo del programador. De hecho, make puede hacer mucho mц║s - lee la
+documentaciцЁn.
 
-%description -l fr
-make sert Ю coordonner la compilation et l'Иdition de liens d'un
+%description -l fr.UTF-8
+make sert ц═ coordonner la compilation et l'ц╘dition de liens d'un
 ensemble de sources pour produire un programme, ne recompilant que ce
-qui est nИcessaire et Иconomisant ainsi beaucoup de temps. En fait,
+qui est nц╘cessaire et ц╘conomisant ainsi beaucoup de temps. En fait,
 make peut faire beaucoup plus -- voir les docs info.
 
-%description -l pl
-Make jest u©ywany do automatyzacji procesСw kompilowania kodu
-╪rСdЁowego i konsolidacji kodu programСw wykonuj╠c tylko te czynno╤ci
-ktСre s╠ potrzebne w razie modyfikacji plikСw przetwarzanych przez
-make oszczЙdzaj╠c tym samym czas. Make mo©e wykonywaФ o wiele wiЙcej
-rС©nych typСw operacji zwi╠zanych z przedtwarzaniem wsadowym. PeЁen
-opis make znale╪Ф mo©na na stronach info ("info make").
+%description -l pl.UTF-8
+Make jest uе╪ywany do automatyzacji procesцЁw kompilowania kodu
+е╨rцЁdе┌owego i konsolidacji kodu programцЁw wykonujд┘c tylko te czynnoе⌡ci
+ktцЁre sд┘ potrzebne w razie modyfikacji plikцЁw przetwarzanych przez
+make oszczд≥dzajд┘c tym samym czas. Make moе╪e wykonywaд┤ o wiele wiд≥cej
+rцЁе╪nych typцЁw operacji zwiд┘zanych z przedtwarzaniem wsadowym. Peе┌en
+opis make znaleе╨д┤ moе╪na na stronach info ("info make").
 
-%description -l pt_BR
-O programa make И usado para coordenar a compilaГЦo e linkediГЦo de um
-conjunto de programas fontes em programas executАveis, recompilando
-somente o que И necessАrio, desse modo economizando um grande tempo do
+%description -l pt_BR.UTF-8
+O programa make ц╘ usado para coordenar a compilaц╖цёo e linkediц╖цёo de um
+conjunto de programas fontes em programas executц║veis, recompilando
+somente o que ц╘ necessц║rio, desse modo economizando um grande tempo do
 programador. De fato, make pode fazer muito mais - leia a
-documentaГЦo.
+documentaц╖цёo.
 
-%description -l ru
-Программа make используется для управления процессом компилляции и
-линковки набора исходных текстов в программу, перекомпилляции только
-того, что необходимо и сохранения, таким образом, кучи времени
-разработчику. На самом деле, она может намного больше - прочитайте
-документацию в формате info...
+%description -l ru.UTF-8
+п÷я─п╬пЁя─п╟п╪п╪п╟ make п╦я│п©п╬п╩я▄п╥я┐п╣я┌я│я▐ п╢п╩я▐ я┐п©я─п╟п╡п╩п╣п╫п╦я▐ п©я─п╬я├п╣я│я│п╬п╪ п╨п╬п╪п©п╦п╩п╩я▐я├п╦п╦ п╦
+п╩п╦п╫п╨п╬п╡п╨п╦ п╫п╟п╠п╬я─п╟ п╦я│я┘п╬п╢п╫я▀я┘ я┌п╣п╨я│я┌п╬п╡ п╡ п©я─п╬пЁя─п╟п╪п╪я┐, п©п╣я─п╣п╨п╬п╪п©п╦п╩п╩я▐я├п╦п╦ я┌п╬п╩я▄п╨п╬
+я┌п╬пЁп╬, я┤я┌п╬ п╫п╣п╬п╠я┘п╬п╢п╦п╪п╬ п╦ я│п╬я┘я─п╟п╫п╣п╫п╦я▐, я┌п╟п╨п╦п╪ п╬п╠я─п╟п╥п╬п╪, п╨я┐я┤п╦ п╡я─п╣п╪п╣п╫п╦
+я─п╟п╥я─п╟п╠п╬я┌я┤п╦п╨я┐. п²п╟ я│п╟п╪п╬п╪ п╢п╣п╩п╣, п╬п╫п╟ п╪п╬п╤п╣я┌ п╫п╟п╪п╫п╬пЁп╬ п╠п╬п╩я▄я┬п╣ - п©я─п╬я┤п╦я┌п╟п╧я┌п╣
+п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦я▌ п╡ я└п╬я─п╪п╟я┌п╣ info...
 
-%description -l tr
-Bu program kaynak kodlarЩnЩn derlenmesini ve baПlanmasЩnЩ koordine
-etmek iГin kullanЩlЩr. Sadece gerekli olan programlarЩ tekrar
-derleyerek zaman yitirilmesini Жnler.
+%description -l tr.UTF-8
+Bu program kaynak kodlarд╠nд╠n derlenmesini ve baд÷lanmasд╠nд╠ koordine
+etmek iц╖in kullanд╠lд╠r. Sadece gerekli olan programlarд╠ tekrar
+derleyerek zaman yitirilmesini ц╤nler.
 
-%description -l uk
-Програма make використову╓ться для керування процесом комп╕ляц╕╖ та
-л╕нковки набору вих╕дних текст╕в у програму, перекомп╕ляц╕╖ т╕льки
-того, що потр╕бно ╕ збереженн╕, таким чином, часу програм╕ста.
-Фактично, make може набагато б╕льше - прочитайте документац╕ю в
-формат╕ info...
+%description -l uk.UTF-8
+п÷я─п╬пЁя─п╟п╪п╟ make п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■я┌я▄я│я▐ п╢п╩я▐ п╨п╣я─я┐п╡п╟п╫п╫я▐ п©я─п╬я├п╣я│п╬п╪ п╨п╬п╪п©я√п╩я▐я├я√я≈ я┌п╟
+п╩я√п╫п╨п╬п╡п╨п╦ п╫п╟п╠п╬я─я┐ п╡п╦я┘я√п╢п╫п╦я┘ я┌п╣п╨я│я┌я√п╡ я┐ п©я─п╬пЁя─п╟п╪я┐, п©п╣я─п╣п╨п╬п╪п©я√п╩я▐я├я√я≈ я┌я√п╩я▄п╨п╦
+я┌п╬пЁп╬, я┴п╬ п©п╬я┌я─я√п╠п╫п╬ я√ п╥п╠п╣я─п╣п╤п╣п╫п╫я√, я┌п╟п╨п╦п╪ я┤п╦п╫п╬п╪, я┤п╟я│я┐ п©я─п╬пЁя─п╟п╪я√я│я┌п╟.
+п╓п╟п╨я┌п╦я┤п╫п╬, make п╪п╬п╤п╣ п╫п╟п╠п╟пЁп╟я┌п╬ п╠я√п╩я▄я┬п╣ - п©я─п╬я┤п╦я┌п╟п╧я┌п╣ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├я√я▌ п╡
+я└п╬я─п╪п╟я┌я√ info...
 
 %prep
 %setup -q
