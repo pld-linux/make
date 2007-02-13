@@ -1,12 +1,12 @@
 Summary:	GNU Make
-Summary(de.UTF-8):   GNU Make
-Summary(es.UTF-8):   GNU Make
-Summary(fr.UTF-8):   L'utilitaire make de GNU
-Summary(pl.UTF-8):   Narzędzie GNU Make
-Summary(pt_BR.UTF-8):   GNU Make
-Summary(ru.UTF-8):   GNU Make
-Summary(tr.UTF-8):   GNU Make
-Summary(uk.UTF-8):   GNU Make
+Summary(de.UTF-8):	GNU Make
+Summary(es.UTF-8):	GNU Make
+Summary(fr.UTF-8):	L'utilitaire make de GNU
+Summary(pl.UTF-8):	Narzędzie GNU Make
+Summary(pt_BR.UTF-8):	GNU Make
+Summary(ru.UTF-8):	GNU Make
+Summary(tr.UTF-8):	GNU Make
+Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	3.81
 Release:	1
