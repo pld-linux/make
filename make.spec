@@ -96,7 +96,6 @@ derleyerek zaman yitirilmesini önler.
 rm -f po/stamp-po
 
 %build
-%{__gettextize}
 %{__aclocal} -I config
 %{__autoconf}
 %{__autoheader}
