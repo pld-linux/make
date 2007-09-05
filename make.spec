@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	3.81
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Building
