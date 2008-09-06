@@ -106,7 +106,7 @@ rm -f po/stamp-po
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT{/etc/env.d,%{_mandir}/man1}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -115,22 +115,26 @@ ln -sf make $RPM_BUILD_ROOT%{_bindir}/gmake
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
+echo '#MAKE="/usr/bin/make -j2"' > $RPM_BUILD_ROOT/etc/env.d/MAKE
+
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
--/usr/sbin/fix-info-dir -c %{_infodir}
+%post
+/usr/sbin/fix-info-dir -c %{_infodir}
+%env_update
 
-%postun	-p	/sbin/postshell
--/usr/sbin/fix-info-dir -c %{_infodir}
+%postun
+/usr/sbin/fix-info-dir -c %{_infodir}
+%env_update
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_bindir}/*
-
+%config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/MAKE
 %{_mandir}/man1/*
 %lang(da) %{_mandir}/da/man1/*
 %lang(es) %{_mandir}/es/man1/*
