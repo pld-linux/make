@@ -115,7 +115,7 @@ ln -sf make $RPM_BUILD_ROOT%{_bindir}/gmake
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
-echo '#MAKE="/usr/bin/make -j2"' > $RPM_BUILD_ROOT/etc/env.d/MAKE
+echo '#MAKE="%{_bindir}/make -j2"' > $RPM_BUILD_ROOT/etc/env.d/MAKE
 
 %find_lang %{name}
 
@@ -123,11 +123,11 @@ echo '#MAKE="/usr/bin/make -j2"' > $RPM_BUILD_ROOT/etc/env.d/MAKE
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/sbin/fix-info-dir -c %{_infodir}
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 %env_update
 
 %postun
-/usr/sbin/fix-info-dir -c %{_infodir}
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 %env_update
 
 %files -f %{name}.lang
