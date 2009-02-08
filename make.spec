@@ -22,6 +22,9 @@ Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-rlimit.patch
 Patch3:		%{name}-jobserver.patch
 Patch4:		%{name}-fdleak.patch
+Patch5:		%{name}-getcwd.patch
+Patch6:		%{name}-memory.patch
+Patch7:		%{name}-newlines.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -98,6 +101,9 @@ derleyerek zaman yitirilmesini önler.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
+%patch6 -p1
+%patch7 -p1
 
 rm -f po/stamp-po
 
