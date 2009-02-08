@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	3.81
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -19,6 +19,9 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
+Patch2:		%{name}-rlimit.patch
+Patch3:		%{name}-jobserver.patch
+Patch4:		%{name}-fdleak.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -92,6 +95,9 @@ derleyerek zaman yitirilmesini önler.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 rm -f po/stamp-po
 
