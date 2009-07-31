@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	3.81
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -25,6 +25,7 @@ Patch4:		%{name}-fdleak.patch
 Patch5:		%{name}-getcwd.patch
 Patch6:		%{name}-memory.patch
 Patch7:		%{name}-newlines.patch
+Patch8:		%{name}-3.81-strcpy-overlap.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -104,6 +105,7 @@ derleyerek zaman yitirilmesini önler.
 %patch5 -p1
 %patch6 -p1
 %patch7 -p1
+%patch8 -p0
 
 rm -f po/stamp-po
 
