@@ -1,14 +1,14 @@
---- make-3.80/doc/make.texi.orig	Wed Sep 18 22:51:58 2002
-+++ make-3.80/doc/make.texi	Fri Oct  4 21:25:12 2002
-@@ -25,9 +25,9 @@
- @c Combine the program and concept indices:
- @syncodeindex pg cp
+--- make-3.82/doc/make.texi.orig	2010-07-19 09:10:54.000000000 +0200
++++ make-3.82/doc/make.texi	2010-08-06 09:21:56.446822457 +0200
+@@ -50,9 +50,9 @@
+ @c ISPELL CHECK: done, 2000-06-25 --Martin Buchholz
  
--@dircategory GNU Packages
+ 
+-@dircategory Software development
 +@dircategory Programming tools:
  @direntry
 -* Make: (make).            Remake files automatically.
 +* Make: (make).				Remake files automatically
  @end direntry
  
- @ifinfo
+ @iftex

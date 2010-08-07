@@ -8,24 +8,21 @@ Summary(ru.UTF-8):	GNU Make
 Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
-Version:	3.81
-Release:	4
+Version:	3.82
+Release:	1
 Epoch:		1
-License:	GPL
+License:	GPL v3+
 Group:		Development/Building
-Source0:	http://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.gz
-# Source0-md5:	a4e9494ac6dc3f6b0c5ff75c5d52abba
+Source0:	http://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.bz2
+# Source0-md5:	1a11100f3c63fcf5753818e59d63088f
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-pl.po-update.patch
-Patch2:		%{name}-rlimit.patch
-Patch3:		%{name}-jobserver.patch
-Patch4:		%{name}-fdleak.patch
-Patch5:		%{name}-getcwd.patch
-Patch6:		%{name}-memory.patch
-Patch7:		%{name}-newlines.patch
-Patch8:		%{name}-3.81-strcpy-overlap.patch
+Patch1:		%{name}-getcwd.patch
+# needs rewrite for 3.82, but nothing serious, just possible memory usage improvement
+#Patch2:		%{name}-memory.patch
+# needs rewrite for 3.82, but probably nothing serious
+#Patch3:		%{name}-newlines.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -99,15 +96,6 @@ derleyerek zaman yitirilmesini önler.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
-%patch8 -p0
-
-rm -f po/stamp-po
 
 %build
 %{__gettextize}
@@ -146,13 +134,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc NEWS README
-%attr(755,root,root) %{_bindir}/*
+%doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_bindir}/gmake
+%attr(755,root,root) %{_bindir}/make
 %config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/MAKE
-%{_mandir}/man1/*
-%lang(da) %{_mandir}/da/man1/*
-%lang(es) %{_mandir}/es/man1/*
-%lang(ja) %{_mandir}/ja/man1/*
-%lang(nl) %{_mandir}/nl/man1/*
-%lang(pl) %{_mandir}/pl/man1/*
+%{_mandir}/man1/make.1*
+%lang(da) %{_mandir}/da/man1/make.1*
+%lang(es) %{_mandir}/es/man1/make.1*
+%lang(ja) %{_mandir}/ja/man1/make.1*
+%lang(nl) %{_mandir}/nl/man1/make.1*
+%lang(pl) %{_mandir}/pl/man1/make.1*
 %{_infodir}/make.info*
