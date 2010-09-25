@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	3.82
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v3+
 Group:		Development/Building
@@ -24,6 +24,7 @@ Patch1:		%{name}-getcwd.patch
 # needs rewrite for 3.82, but probably nothing serious
 #Patch3:		%{name}-newlines.patch
 Patch4:		%{name}-3.82-MAKEFLAGS-reexec.patch
+Patch5:		%{name}-archives-many-objs.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -98,6 +99,7 @@ derleyerek zaman yitirilmesini önler.
 %patch0 -p1
 %patch1 -p1
 %patch4 -p0
+%patch5 -p0
 
 %build
 %{__gettextize}
