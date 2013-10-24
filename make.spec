@@ -8,13 +8,13 @@ Summary(ru.UTF-8):	GNU Make
 Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
-Version:	3.82
-Release:	3
+Version:	4.0
+Release:	0.1
 Epoch:		1
 License:	GPL v3+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.bz2
-# Source0-md5:	1a11100f3c63fcf5753818e59d63088f
+# Source0-md5:	571d470a7647b455e3af3f92d79f1c18
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
@@ -23,8 +23,6 @@ Patch1:		%{name}-getcwd.patch
 #Patch2:		%{name}-memory.patch
 # needs rewrite for 3.82, but probably nothing serious
 #Patch3:		%{name}-newlines.patch
-Patch4:		%{name}-3.82-MAKEFLAGS-reexec.patch
-Patch5:		%{name}-archives-many-objs.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -98,8 +96,6 @@ derleyerek zaman yitirilmesini önler.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch4 -p0
-%patch5 -p0
 
 %build
 %{__gettextize}
