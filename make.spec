@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	4.0
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL v3+
 Group:		Development/Building
