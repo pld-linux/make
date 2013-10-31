@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	guile	# Guile embedded scripting
+#
 Summary:	GNU Make
 Summary(de.UTF-8):	GNU Make
 Summary(es.UTF-8):	GNU Make
@@ -19,14 +23,12 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-getcwd.patch
-# needs rewrite for 3.82, but nothing serious, just possible memory usage improvement
-#Patch2:		%{name}-memory.patch
-# needs rewrite for 3.82, but probably nothing serious
-#Patch3:		%{name}-newlines.patch
 URL:		http://www.gnu.org/software/make/
-BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.9
-BuildRequires:	gettext-devel >= 0.14.1
+BuildRequires:	autoconf >= 2.62
+BuildRequires:	automake >= 1:1.11.1
+BuildRequires:	gettext-devel >= 0.18.1
+%{?with_guile:BuildRequires:	guile-devel >= 2.0}
+BuildRequires:	pkgconfig
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -92,6 +94,18 @@ derleyerek zaman yitirilmesini önler.
 Фактично, make може набагато більше - прочитайте документацію в
 форматі info...
 
+%package devel
+Summary:	Header file for GNU Make modules interface
+Summary(pl.UTF-8):	Plik nagłówkowy interfejsu modułów GNU Make'a
+Group:		Development/Libraries
+# doesn't require base
+
+%description devel
+Header file for GNU Make modules interface.
+
+%description devel -l pl.UTF-8
+Plik nagłówkowy interfejsu modułów GNU Make'a.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -103,7 +117,9 @@ derleyerek zaman yitirilmesini önler.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_guile:--without-guile}
+
 %{__make}
 
 %install
@@ -116,6 +132,7 @@ install -d $RPM_BUILD_ROOT{/etc/env.d,%{_mandir}/man1}
 ln -sf make $RPM_BUILD_ROOT%{_bindir}/gmake
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/README.make-non-english-man-pages
 
 echo '#MAKE="%{_bindir}/make -j2"' > $RPM_BUILD_ROOT/etc/env.d/MAKE
 
@@ -145,3 +162,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(nl) %{_mandir}/nl/man1/make.1*
 %lang(pl) %{_mandir}/pl/man1/make.1*
 %{_infodir}/make.info*
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/gnumake.h
