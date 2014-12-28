@@ -26,7 +26,7 @@ Patch1:		%{name}-getcwd.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.11.1
-BuildRequires:	gettext-devel >= 0.18.1
+BuildRequires:	gettext-tools >= 0.18.1
 %{?with_guile:BuildRequires:	guile-devel >= 2.0}
 BuildRequires:	pkgconfig
 BuildRequires:	texinfo
