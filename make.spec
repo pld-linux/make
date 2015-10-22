@@ -13,7 +13,7 @@ Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	4.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v3+
 Group:		Development/Building
@@ -23,6 +23,7 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-getcwd.patch
+Patch2:		%{name}-bug-43434.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.11.1
@@ -110,6 +111,7 @@ Plik nagłówkowy interfejsu modułów GNU Make'a.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__gettextize}
