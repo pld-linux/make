@@ -13,7 +13,7 @@ Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	4.2.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v3+
 Group:		Development/Building
@@ -22,6 +22,10 @@ Source0:	http://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.bz2
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
+Patch1:		0001-configure.ac-SV-50648-Detect-Guile-2.2-packages.patch
+Patch2:		make-4.2.1-glob-fix.patch
+Patch3:		make-4.2.1-glob-fix-2.patch
+Patch4:		make-4.2.1-glob-fix-3.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.11.1
@@ -108,6 +112,10 @@ Plik nagłówkowy interfejsu modułów GNU Make'a.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 %{__gettextize}
