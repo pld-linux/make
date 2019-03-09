@@ -13,7 +13,7 @@ Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
 Version:	4.2.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v3+
 Group:		Development/Building
