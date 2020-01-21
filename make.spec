@@ -12,26 +12,24 @@ Summary(ru.UTF-8):	GNU Make
 Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
-Version:	4.2.1
-Release:	3
+Version:	4.3
+Release:	1
 Epoch:		1
 License:	GPL v3+
 Group:		Development/Building
-Source0:	http://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.bz2
-# Source0-md5:	15b012617e7c44c0ed482721629577ac
+Source0:	http://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.lz
+# Source0-md5:	d5c40e7bd1e97a7404f5d3be982f479a
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
-Patch1:		0001-configure.ac-SV-50648-Detect-Guile-2.2-packages.patch
-Patch2:		make-4.2.1-glob-fix.patch
-Patch3:		make-4.2.1-glob-fix-2.patch
-Patch4:		make-4.2.1-glob-fix-3.patch
 URL:		http://www.gnu.org/software/make/
-BuildRequires:	autoconf >= 2.62
-BuildRequires:	automake >= 1:1.11.1
-BuildRequires:	gettext-tools >= 0.18.1
+BuildRequires:	autoconf >= 2.69
+BuildRequires:	automake >= 1:1.16.1
+BuildRequires:	gettext-tools >= 0.19.4
 %{?with_guile:BuildRequires:	guile-devel >= 2.0}
+BuildRequires:	lzip
 BuildRequires:	pkgconfig
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -112,14 +110,10 @@ Plik nagłówkowy interfejsu modułów GNU Make'a.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
 %{__gettextize}
-%{__aclocal} -I config
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
