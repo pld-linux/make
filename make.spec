@@ -12,13 +12,13 @@ Summary(ru.UTF-8):	GNU Make
 Summary(tr.UTF-8):	GNU Make
 Summary(uk.UTF-8):	GNU Make
 Name:		make
-Version:	4.3
-Release:	2
+Version:	4.4
+Release:	1
 Epoch:		1
 License:	GPL v3+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.lz
-# Source0-md5:	d5c40e7bd1e97a7404f5d3be982f479a
+# Source0-md5:	5da8b0fcc500de9c254ca59e58558b27
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
