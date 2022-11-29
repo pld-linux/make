@@ -22,6 +22,7 @@ Source0:	http://ftp.gnu.org/gnu/make/%{name}-%{version}.tar.lz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	ab6da7a1ba3bcf9e86e4e3fdecca61a7
 Patch0:		%{name}-info.patch
+Patch1:		sub-make-makeflags.patch
 URL:		http://www.gnu.org/software/make/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.16.1
@@ -110,6 +111,7 @@ Plik nagłówkowy interfejsu modułów GNU Make'a.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__gettextize}
